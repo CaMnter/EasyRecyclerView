@@ -19,8 +19,10 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
     private static final int MULTIPLE_ITEM_TYPE = 0;
     private static final int SINGLE_ITEM_TYPE = 1;
 
+
     /**
-     * 请返回RecycleView加载的布局Id数组
+     * Please return RecyclerView loading layout Id array
+     * 请返回RecyclerView加载的布局Id数组
      *
      * @return 布局Id数组
      */
@@ -31,6 +33,8 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
     }
 
     /**
+     * butt joint the onBindViewHolder and
+     * If you want to write logic in onBindViewHolder, you can write here
      * 对接了onBindViewHolder
      * onBindViewHolder里的逻辑写在这
      *
@@ -58,6 +62,8 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
     }
 
     /**
+     * Please write judgment logic when more layout
+     * and not write when single layout
      * 如果是多布局的话，请写判断逻辑
      * 单布局可以不写
      *
