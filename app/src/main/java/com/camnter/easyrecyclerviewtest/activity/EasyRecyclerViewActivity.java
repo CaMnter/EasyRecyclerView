@@ -1,13 +1,13 @@
 package com.camnter.easyrecyclerviewtest.activity;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.camnter.easyrecyclerview.widget.EasyRecyclerView;
+import com.camnter.easyrecyclerview.widget.decorator.EasyDividerItemDecoration;
 import com.camnter.easyrecyclerviewtest.R;
 import com.camnter.easyrecyclerviewtest.adapter.MyRecycleViewAdapter;
 import com.camnter.easyrecyclerviewtest.bean.RecyclerViewData;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class EasyRecyclerViewActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private MyRecycleViewAdapter myRecycleViewAdapter;
 
     @Override
@@ -24,27 +23,20 @@ public class EasyRecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_acitivty);
 
-        this.recyclerView = (RecyclerView) this.findViewById(R.id.recycler_view);
+        EasyRecyclerView recyclerView = (EasyRecyclerView) this.findViewById(R.id.recycler_view);
         this.myRecycleViewAdapter = new MyRecycleViewAdapter();
         recyclerView.setAdapter(this.myRecycleViewAdapter);
-        this.initRecyclerView();
+
+        // set divider
+        recyclerView.addItemDecoration(
+                new EasyDividerItemDecoration(
+                        this,
+                        EasyDividerItemDecoration.VERTICAL_LIST,
+                        R.drawable.bg_recycler_view_divider
+                )
+        );
+
         this.initData();
-    }
-
-    private void initRecyclerView() {
-        this.recyclerView.setAdapter(this.myRecycleViewAdapter);
-
-        // init LinearLayoutManager
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        // set the VERTICAL layout
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-        // set layout manager
-        this.recyclerView.setLayoutManager(linearLayoutManager);
-
-
-        // Keep recyclerview fixed size
-        this.recyclerView.setHasFixedSize(true);
     }
 
     private void initData() {
