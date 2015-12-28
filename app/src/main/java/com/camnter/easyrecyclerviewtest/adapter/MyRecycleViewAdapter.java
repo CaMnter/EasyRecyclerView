@@ -10,7 +10,7 @@ import com.camnter.easyrecyclerviewtest.bean.RecyclerViewData;
 
 
 /**
- * Description：
+ * Description：MyRecycleViewAdapter
  * Created by：CaMnter
  * Time：2015-10-21 17:00
  */

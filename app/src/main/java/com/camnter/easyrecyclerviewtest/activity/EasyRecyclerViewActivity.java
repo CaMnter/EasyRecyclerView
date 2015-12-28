@@ -14,6 +14,11 @@ import com.camnter.easyrecyclerviewtest.bean.RecyclerViewData;
 
 import java.util.ArrayList;
 
+/**
+ * Description：EasyRecyclerViewActivity
+ * Created by：CaMnter
+ * Time：2015-10-21 16:51
+ */
 public class EasyRecyclerViewActivity extends AppCompatActivity {
 
     private MyRecycleViewAdapter myRecycleViewAdapter;
