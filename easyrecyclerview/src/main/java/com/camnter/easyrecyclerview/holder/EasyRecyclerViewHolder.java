@@ -28,8 +28,8 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * set the on item click listener
      * 设置Item的点击事件
      *
-     * @param listener
-     * @param position
+     * @param listener listener
+     * @param position position
      */
     public void setOnItemClickListener(final EasyRecyclerViewHolder.OnItemClickListener listener, final int position) {
         if (listener == null) {
@@ -48,8 +48,8 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * set the on item long click listener
      * 设置Item的长点击事件
      *
-     * @param listener
-     * @param position
+     * @param listener listener
+     * @param position position
      */
     public void setOnItemLongClickListener(final EasyRecyclerViewHolder.OnItemLongClickListener listener, final int position) {
         if (listener == null) {
@@ -72,9 +72,9 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * findViewById过的view会被缓存下来，以供下次find相同view的时候
      * ViewHolder模式 查找子View
      *
-     * @param viewId
-     * @param <T>
-     * @return
+     * @param viewId viewId
+     * @param <T>    T
+     * @return T
      */
     public <T extends View> T findViewById(int viewId) {
         View view = views.get(viewId);
@@ -90,6 +90,12 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * 点击事件回调
      */
     public interface OnItemClickListener {
+        /**
+         * on item click call back
+         *
+         * @param convertView convertView
+         * @param position    position
+         */
         void onItemClick(View convertView, int position);
     }
 
@@ -98,6 +104,13 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * 长点击事件回调
      */
     public interface OnItemLongClickListener {
+        /**
+         * on item long click call back
+         *
+         * @param convertView convertView
+         * @param position    position
+         * @return true false
+         */
         boolean onItemLongClick(View convertView, int position);
     }
 

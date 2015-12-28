@@ -83,8 +83,8 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * 对接了onBindViewHolder
      * onBindViewHolder里的逻辑写在这
      *
-     * @param viewHolder
-     * @param position
+     * @param viewHolder viewHolder
+     * @param position position
      */
     public abstract void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position);
 
@@ -148,7 +148,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * set the on item click listener
      * 设置点击事件
      *
-     * @param onItemClickListener
+     * @param onItemClickListener onItemClickListener
      */
     public void setOnItemClickListener(EasyRecyclerViewHolder.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -158,7 +158,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * set the on item long click listener
      * 设置长点击事件
      *
-     * @param onItemLongClickListener
+     * @param onItemLongClickListener onItemLongClickListener
      */
     public void setOnItemLongClickListener(EasyRecyclerViewHolder.OnItemLongClickListener onItemLongClickListener) {
         this.onItemLongClickListener = onItemLongClickListener;
