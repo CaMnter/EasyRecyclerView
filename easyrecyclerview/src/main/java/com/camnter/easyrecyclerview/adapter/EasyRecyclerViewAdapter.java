@@ -107,7 +107,6 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
     /**
      * Please write judgment logic when more layout
      * and not write when single layout
-     * <p/>
      * 如果是多布局的话，请写判断逻辑
      * 单布局可以不写
      *
@@ -119,7 +118,6 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
 
     /**
      * get the itemType by position
-     * <p/>
      * 根据position获取ItemType
      *
      * @param position Item position
