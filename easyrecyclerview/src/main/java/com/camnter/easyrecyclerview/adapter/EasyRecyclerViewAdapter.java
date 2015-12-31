@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2015 CaMnter 421482590@qq.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.camnter.easyrecyclerview.adapter;
 
 import android.support.v7.widget.RecyclerView;
@@ -84,14 +100,14 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * onBindViewHolder里的逻辑写在这
      *
      * @param viewHolder viewHolder
-     * @param position position
+     * @param position   position
      */
     public abstract void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position);
 
     /**
      * Please write judgment logic when more layout
      * and not write when single layout
-     *
+     * <p/>
      * 如果是多布局的话，请写判断逻辑
      * 单布局可以不写
      *
@@ -103,7 +119,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
 
     /**
      * get the itemType by position
-     *
+     * <p/>
      * 根据position获取ItemType
      *
      * @param position Item position
