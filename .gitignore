@@ -1,5 +1,5 @@
 # Built application files
-*.apk
+
 *.ap_
 
 # Files for the Dalvik VM
@@ -26,15 +26,16 @@ proguard/
 
 # Log Files
 *.log
-.settings/
 
-# Intellij project files 
+# Intellij project files
 *.iml
-*/*.iml
 *.ipr
 *.iws
 .idea/
-
-# Mac
+#
+# # Mac
 .DS_Store
 apks/
+
+# jks
+*.jks
