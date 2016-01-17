@@ -15,19 +15,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-<resources>
+    <TextView
+        android:id="@+id/main_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/main_item_tv_padding"
+        android:textColor="@color/main_item_tv"
+        android:textSize="@dimen/main_item_tv_text_size"
+        android:textStyle="bold" />
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
-
-    <style name="App.Card" parent="CardView">
-        <item name="contentPadding">0dp</item>
-        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
-        <item name="cardPreventCornerOverlap">false</item>
-        <item name="cardElevation">@dimen/card_corner_radius</item>
-    </style>
-
-</resources>
+</LinearLayout>

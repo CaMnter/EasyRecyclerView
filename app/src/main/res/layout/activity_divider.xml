@@ -16,18 +16,15 @@ limitations under the License.
 
 -->
 
-<resources>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EasyDividerItemDecorationActivity">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
+    <com.camnter.easyrecyclerview.widget.EasyRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <style name="App.Card" parent="CardView">
-        <item name="contentPadding">0dp</item>
-        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
-        <item name="cardPreventCornerOverlap">false</item>
-        <item name="cardElevation">@dimen/card_corner_radius</item>
-    </style>
-
-</resources>
+</RelativeLayout>

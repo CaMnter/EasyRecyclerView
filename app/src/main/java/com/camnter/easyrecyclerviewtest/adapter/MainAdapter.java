@@ -16,26 +16,18 @@
 
 package com.camnter.easyrecyclerviewtest.adapter;
 
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.camnter.easyrecyclerview.adapter.EasyRecyclerViewAdapter;
 import com.camnter.easyrecyclerview.holder.EasyRecyclerViewHolder;
 import com.camnter.easyrecyclerviewtest.R;
-import com.camnter.easyrecyclerviewtest.bean.RecyclerViewData;
-
 
 /**
- * Description：MyRecycleViewAdapter
+ * Description：MainAdapter
  * Created by：CaMnter
- * Time：2015-10-21 17:00
+ * Time：2016-01-17 00:29
  */
-public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
-
-    private static final int MULTIPLE_ITEM_TYPE = 0;
-    private static final int SINGLE_ITEM_TYPE = 1;
-
-
+public class MainAdapter extends EasyRecyclerViewAdapter {
     /**
      * Please return RecyclerView loading layout Id array
      * 请返回RecyclerView加载的布局Id数组
@@ -44,8 +36,7 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
      */
     @Override
     public int[] getItemLayouts() {
-        return new int[]{
-                R.layout.item_recyclerview_multiple, R.layout.item_recyclerview_single};
+        return new int[]{R.layout.item_main};
     }
 
     /**
@@ -54,27 +45,15 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
      * 对接了onBindViewHolder
      * onBindViewHolder里的逻辑写在这
      *
-     * @param viewHolder
-     * @param position
+     * @param viewHolder viewHolder
+     * @param position   position
      */
     @Override
     public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
-        int itemType = this.getRecycleViewItemType(position);
-        RecyclerViewData data = this.getItem(position);
-        switch (itemType) {
-            case MULTIPLE_ITEM_TYPE: {
-                TextView multipleTV = viewHolder.findViewById(R.id.recycler_view_mul_tv);
-                ImageView multipleIV = viewHolder.findViewById(R.id.recycler_view_mul_iv);
-                multipleTV.setText(data.content);
-                multipleIV.setImageResource(data.imageResId);
-                break;
-            }
-            case SINGLE_ITEM_TYPE: {
-                ImageView singleIV = viewHolder.findViewById(R.id.recycler_view_single_iv);
-                singleIV.setImageResource(data.imageResId);
-                break;
-            }
-        }
+        Class c = (Class) this.getList().get(position);
+        if (c == null) return;
+        TextView mainItemTv = viewHolder.findViewById(R.id.main_item_tv);
+        mainItemTv.setText(c.getSimpleName());
     }
 
     /**
@@ -88,11 +67,6 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
      */
     @Override
     public int getRecycleViewItemType(int position) {
-        if (position % 2 == 0) {
-            return SINGLE_ITEM_TYPE;
-        } else {
-            return MULTIPLE_ITEM_TYPE;
-        }
+        return 0;
     }
-
 }

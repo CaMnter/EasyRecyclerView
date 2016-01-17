@@ -16,18 +16,18 @@ limitations under the License.
 
 -->
 
-<resources>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
 
-    <style name="App.Card" parent="CardView">
-        <item name="contentPadding">0dp</item>
-        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
-        <item name="cardPreventCornerOverlap">false</item>
-        <item name="cardElevation">@dimen/card_corner_radius</item>
-    </style>
+    <com.camnter.easyrecyclerview.widget.EasyRecyclerView
+        android:id="@+id/main_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</resources>
+
+</LinearLayout>
+
