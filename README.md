@@ -126,12 +126,12 @@ recyclerView.addItemDecoration(
 
 ## ScreenShots
 
-**EasyDividerItemDecoration**
+**EasyDividerItemDecoration**  
 ![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/EasyDividerItemDecoration.png)   
 
   
-**EasyBorderDividerItemDecoration**  
-![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/EasyBorderDividerItemDecoration)  
+**EasyBorderDividerItemDecoration**   
+![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/EasyBorderDividerItemDecoration.png)  
 
 ---
 
