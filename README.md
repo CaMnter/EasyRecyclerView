@@ -7,7 +7,7 @@ EasyRecyclerView
 
 ```Gradle
 dependencies {
-    compile 'com.camnter.easyrecyclerview:easyrecyclerview:1.0.1'
+    compile 'com.camnter.easyrecyclerview:easyrecyclerview:1.1.0'
 }
 ```
 
@@ -124,10 +124,14 @@ recyclerView.addItemDecoration(
 
 ---
 
-## Consequence
+## ScreenShots
 
-![recyclerview_1](https://github.com/CaMnter/EasyRecyclerView/raw/master/readme/recyclerview_1.png)  
+**EasyDividerItemDecoration**
+![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/EasyDividerItemDecoration.png)   
 
+  
+**EasyBorderDividerItemDecoration**  
+![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/EasyBorderDividerItemDecoration)  
 
 ---
 
