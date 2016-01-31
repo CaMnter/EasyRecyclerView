@@ -55,6 +55,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
         return this.mList.size();
     }
 
+    @SuppressWarnings("unchecked")
     public <T> T getItem(int position) {
         return (T) this.mList.get(position);
     }
@@ -63,6 +64,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
         return this.getItem(position);
     }
 
+    @SuppressWarnings("unchecked")
     public void setList(List list) {
         this.mList.clear();
         if (list == null) return;
@@ -81,6 +83,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
         return this.mList;
     }
 
+    @SuppressWarnings("unchecked")
     public void addAll(Collection list) {
         this.mList.addAll(list);
     }

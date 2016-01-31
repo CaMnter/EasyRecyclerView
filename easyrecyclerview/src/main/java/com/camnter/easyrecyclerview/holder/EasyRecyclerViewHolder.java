@@ -92,6 +92,7 @@ public class EasyRecyclerViewHolder extends RecyclerView.ViewHolder {
      * @param <T>    T
      * @return T
      */
+    @SuppressWarnings("unchecked")
     public <T extends View> T findViewById(int viewId) {
         View view = views.get(viewId);
         if (view == null) {
