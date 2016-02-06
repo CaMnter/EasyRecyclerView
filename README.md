@@ -19,12 +19,11 @@ dependencies {
 
 ---
 
-## RecyclerViewAdapter
-
+## Adapter
 
 
 ```Java
-public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
+public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
 
     private static final int MULTIPLE_ITEM_TYPE = 0;
     private static final int SINGLE_ITEM_TYPE = 1;
@@ -48,13 +47,13 @@ public class MyRecycleViewAdapter extends EasyRecyclerViewAdapter {
      * 对接了onBindViewHolder
      * onBindViewHolder里的逻辑写在这
      *
-     * @param viewHolder
-     * @param position
+     * @param viewHolder viewHolder
+     * @param position position
      */
     @Override
     public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
         int itemType = this.getRecycleViewItemType(position);
-        RecyclerViewData data = this.getItem(position);
+        EasyRecyclerViewData data = this.getItem(position);
         switch (itemType) {
             case MULTIPLE_ITEM_TYPE: {
                 TextView multipleTV = viewHolder.findViewById(R.id.recycler_view_mul_tv);
@@ -121,6 +120,17 @@ recyclerView.addItemDecoration(
         )
 );
 ```
+
+---
+
+## Decoration
+
+This library provides two decoration:
+
+- **EasyDividerItemDecoration**
+
+- **EasyBorderDividerItemDecoration**
+
 
 ---
 
