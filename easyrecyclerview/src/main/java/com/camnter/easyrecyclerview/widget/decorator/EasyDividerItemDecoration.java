@@ -38,9 +38,11 @@ public class EasyDividerItemDecoration extends RecyclerView.ItemDecoration {
 
     public static final int VERTICAL_LIST = LinearLayout.VERTICAL;
 
-    private Drawable mDivider;
+    public Drawable mDivider;
 
-    private int mOrientation;
+    public int mOrientation;
+
+    public boolean bottomDivider = false;
 
     public EasyDividerItemDecoration(Context context, int orientation) {
         this.setDefaultDivider(context);
@@ -116,7 +118,9 @@ public class EasyDividerItemDecoration extends RecyclerView.ItemDecoration {
         final int right = parent.getWidth() - parent.getPaddingRight();
 
         final int childCount = parent.getChildCount();
-        for (int i = 0; i < childCount - 1; i++) {
+        int drawCount = childCount;
+        if (!bottomDivider) drawCount--;
+        for (int i = 0; i < drawCount; i++) {
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();
@@ -133,7 +137,9 @@ public class EasyDividerItemDecoration extends RecyclerView.ItemDecoration {
         final int bottom = parent.getHeight() - parent.getPaddingBottom();
 
         final int childCount = parent.getChildCount();
-        for (int i = 0; i < childCount - 1; i++) {
+        int drawCount = childCount;
+        if (!bottomDivider) drawCount--;
+        for (int i = 0; i < drawCount; i++) {
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();

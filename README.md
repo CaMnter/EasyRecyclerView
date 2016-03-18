@@ -7,7 +7,7 @@ EasyRecyclerView
 
 ```Gradle
 dependencies {
-    compile 'com.camnter.easyrecyclerview:easyrecyclerview:1.1.0'
+    compile 'com.camnter.easyrecyclerview:easyrecyclerview:1.2'
 }
 ```
 
