@@ -1,7 +1,11 @@
 EasyRecyclerView
 ==
 
----
+![Language](https://img.shields.io/badge/language-Java-EE0000.svg) [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/CaMnter/EasyRecyclerView/blob/master/LICENSE) 
+![Version](https://img.shields.io/badge/version-1.2-8470FF.svg) 
+![SDK](https://img.shields.io/badge/SDK-9%2B-orange.svg) 
+ [ ![Download](https://api.bintray.com/packages/camnter/maven/easyrecyclerview/images/download.svg) ](https://bintray.com/camnter/maven/easyrecyclerview/_latestVersion) 
+
 
 ## Gradle
 
@@ -11,13 +15,13 @@ dependencies {
 }
 ```
 
----
+
 
 ## Blog
 
  [EasyRecyclerView](http://blog.csdn.net/qq_16430735/article/details/49341563)
 
----
+
 
 ## Adapter
 
@@ -91,7 +95,7 @@ public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
 }
 ```
 
----
+
 
 
 ## EasyRecyclerView
