@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 CaMnter 421482590@qq.com
+ * Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package com.camnter.easyrecyclerviewtest.adapter;
 
 import android.widget.TextView;
-
 import com.camnter.easyrecyclerview.adapter.EasyRecyclerViewAdapter;
 import com.camnter.easyrecyclerview.holder.EasyRecyclerViewHolder;
 import com.camnter.easyrecyclerviewtest.R;
@@ -34,10 +33,10 @@ public class MainAdapter extends EasyRecyclerViewAdapter {
      *
      * @return 布局Id数组
      */
-    @Override
-    public int[] getItemLayouts() {
-        return new int[]{R.layout.item_main};
+    @Override public int[] getItemLayouts() {
+        return new int[] { R.layout.item_main };
     }
+
 
     /**
      * butt joint the onBindViewHolder and
@@ -46,15 +45,15 @@ public class MainAdapter extends EasyRecyclerViewAdapter {
      * onBindViewHolder里的逻辑写在这
      *
      * @param viewHolder viewHolder
-     * @param position   position
+     * @param position position
      */
-    @Override
-    public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
+    @Override public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
         Class c = (Class) this.getList().get(position);
         if (c == null) return;
         TextView mainItemTv = viewHolder.findViewById(R.id.main_item_tv);
         mainItemTv.setText(c.getSimpleName());
     }
+
 
     /**
      * Please write judgment logic when more layout
@@ -65,8 +64,7 @@ public class MainAdapter extends EasyRecyclerViewAdapter {
      * @param position Item position
      * @return 布局Id数组中的index
      */
-    @Override
-    public int getRecycleViewItemType(int position) {
+    @Override public int getRecycleViewItemType(int position) {
         return 0;
     }
 }

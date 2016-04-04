@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!--
 
-Copyright (C) 2015 CaMnter 421482590@qq.com
+Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ limitations under the License.
         android:id="@+id/recycler_view_mul_iv"
         android:layout_width="66dp"
         android:layout_height="66dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/recycler_view_mul_tv"
@@ -41,6 +41,6 @@ limitations under the License.
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
         android:padding="6dp"
-        android:textColor="#ff3F51B5" />
+        android:textColor="#ff3F51B5"/>
 
 </LinearLayout>

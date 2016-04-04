@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 CaMnter 421482590@qq.com
+ * Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-
 import com.camnter.easyrecyclerview.widget.EasyRecyclerView;
 import com.camnter.easyrecyclerview.widget.decorator.EasyBorderDividerItemDecoration;
 import com.camnter.easyrecyclerviewtest.R;
 import com.camnter.easyrecyclerviewtest.adapter.EasyBorderDividerItemDecorationAdapter;
 import com.camnter.easyrecyclerviewtest.bean.EasyRecyclerViewData;
-
 import java.util.ArrayList;
 
 /**
@@ -38,8 +36,8 @@ public class EasyBorderDividerItemDecorationActivity extends AppCompatActivity {
 
     private EasyBorderDividerItemDecorationAdapter adapter;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_border_divider);
         EasyRecyclerView borderRv = (EasyRecyclerView) this.findViewById(R.id.border_rv);
@@ -47,12 +45,11 @@ public class EasyBorderDividerItemDecorationActivity extends AppCompatActivity {
         borderRv.setAdapter(this.adapter);
         borderRv.addItemDecoration(new EasyBorderDividerItemDecoration(
                 this.getResources().getDimensionPixelOffset(R.dimen.border_vertical_padding),
-                this.getResources().getDimensionPixelOffset(R.dimen.border_horizontal_padding
-                )));
-
+                this.getResources().getDimensionPixelOffset(R.dimen.border_horizontal_padding)));
 
         this.initData();
     }
+
 
     private void initData() {
 
@@ -68,9 +65,8 @@ public class EasyBorderDividerItemDecorationActivity extends AppCompatActivity {
         this.adapter.notifyDataSetChanged();
     }
 
-    public int getMipmapId(Context context, String mipmapName) {
-        return context.getResources().getIdentifier(mipmapName,
-                "mipmap", context.getPackageName());
-    }
 
+    public int getMipmapId(Context context, String mipmapName) {
+        return context.getResources().getIdentifier(mipmapName, "mipmap", context.getPackageName());
+    }
 }

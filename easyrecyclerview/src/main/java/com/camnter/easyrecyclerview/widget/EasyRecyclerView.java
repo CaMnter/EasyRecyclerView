@@ -33,15 +33,18 @@ public class EasyRecyclerView extends RecyclerView {
         this.initRecyclerView(context);
     }
 
+
     public EasyRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.initRecyclerView(context);
     }
 
+
     public EasyRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.initRecyclerView(context);
     }
+
 
     /**
      * Init the recycler view

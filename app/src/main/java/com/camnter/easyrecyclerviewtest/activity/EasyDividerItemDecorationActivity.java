@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 CaMnter 421482590@qq.com
+ * Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,11 @@ package com.camnter.easyrecyclerviewtest.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
 import com.camnter.easyrecyclerview.widget.EasyRecyclerView;
 import com.camnter.easyrecyclerview.widget.decorator.EasyDividerItemDecoration;
 import com.camnter.easyrecyclerviewtest.R;
 import com.camnter.easyrecyclerviewtest.adapter.EasyDividerItemDecorationAdapter;
 import com.camnter.easyrecyclerviewtest.bean.EasyRecyclerViewData;
-
 import java.util.ArrayList;
 
 /**
@@ -37,8 +35,8 @@ public class EasyDividerItemDecorationActivity extends AppCompatActivity {
 
     private EasyDividerItemDecorationAdapter easyDividerItemDecorationAdapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divider);
 
@@ -48,15 +46,12 @@ public class EasyDividerItemDecorationActivity extends AppCompatActivity {
 
         // set divider
         recyclerView.addItemDecoration(
-                new EasyDividerItemDecoration(
-                        this,
-                        EasyDividerItemDecoration.VERTICAL_LIST,
-                        R.drawable.bg_recycler_view_divider
-                )
-        );
+                new EasyDividerItemDecoration(this, EasyDividerItemDecoration.VERTICAL_LIST,
+                        R.drawable.bg_recycler_view_divider));
 
         this.initData();
     }
+
 
     private void initData() {
         ArrayList<EasyRecyclerViewData> allData = new ArrayList<>();
@@ -75,9 +70,8 @@ public class EasyDividerItemDecorationActivity extends AppCompatActivity {
         this.easyDividerItemDecorationAdapter.notifyDataSetChanged();
     }
 
-    public int getMipmapId(Context context, String mipmapName) {
-        return context.getResources().getIdentifier(mipmapName,
-                "mipmap", context.getPackageName());
-    }
 
+    public int getMipmapId(Context context, String mipmapName) {
+        return context.getResources().getIdentifier(mipmapName, "mipmap", context.getPackageName());
+    }
 }

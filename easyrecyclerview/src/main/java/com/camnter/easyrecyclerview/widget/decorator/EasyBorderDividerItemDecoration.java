@@ -30,18 +30,20 @@ public class EasyBorderDividerItemDecoration extends RecyclerView.ItemDecoration
     private final int verticalItemSpacingInPx;
     private final int horizontalItemSpacingInPx;
 
+
     public EasyBorderDividerItemDecoration(int verticalItemSpacingInPx, int horizontalItemSpacingInPx) {
         this.verticalItemSpacingInPx = verticalItemSpacingInPx;
         this.horizontalItemSpacingInPx = horizontalItemSpacingInPx;
     }
 
+
     /**
      * set border
      *
      * @param outRect outRect
-     * @param view    view
-     * @param parent  parent
-     * @param state   state
+     * @param view view
+     * @param parent parent
+     * @param state state
      */
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -57,11 +59,12 @@ public class EasyBorderDividerItemDecoration extends RecyclerView.ItemDecoration
         outRect.set(left, top, right, bottom);
     }
 
+
     /**
      * get the item bottom spacing
      *
      * @param itemPosition itemPosition
-     * @param childCount   childCount
+     * @param childCount childCount
      * @return int
      */
     private int getItemBottomSpacing(int itemPosition, int childCount) {
@@ -70,6 +73,7 @@ public class EasyBorderDividerItemDecoration extends RecyclerView.ItemDecoration
         }
         return this.verticalItemSpacingInPx / 2;
     }
+
 
     /**
      * get the item top spacing
@@ -83,6 +87,7 @@ public class EasyBorderDividerItemDecoration extends RecyclerView.ItemDecoration
         }
         return this.verticalItemSpacingInPx / 2;
     }
+
 
     /**
      * is the first item
@@ -99,7 +104,7 @@ public class EasyBorderDividerItemDecoration extends RecyclerView.ItemDecoration
      * is the last item
      *
      * @param itemPosition itemPosition
-     * @param childCount   childCount
+     * @param childCount childCount
      * @return boolean
      */
     private boolean isLastItem(int itemPosition, int childCount) {

@@ -20,9 +20,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.camnter.easyrecyclerview.holder.EasyRecyclerViewHolder;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -32,61 +30,69 @@ import java.util.List;
  * Created by：CaMnter
  * Time：2015-10-21 16:21
  */
-public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public abstract class EasyRecyclerViewAdapter
+        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList mList;
     private EasyRecyclerViewHolder.OnItemClickListener onItemClickListener;
     private EasyRecyclerViewHolder.OnItemLongClickListener onItemLongClickListener;
 
+
     public EasyRecyclerViewAdapter() {
         this.mList = new ArrayList();
     }
+
 
     /**
      * Returns the total number of items in the data set hold by the adapter.
      *
      * @return The total number of items in this adapter.
      */
-    @Override
-    public int getItemCount() {
+    @Override public int getItemCount() {
         return this.mList.size();
     }
+
 
     public int getListSize() {
         return this.mList.size();
     }
 
-    @SuppressWarnings("unchecked")
-    public <T> T getItem(int position) {
+
+    @SuppressWarnings("unchecked") public <T> T getItem(int position) {
         return (T) this.mList.get(position);
     }
+
 
     public <T> T getItemByPosition(int position) {
         return this.getItem(position);
     }
 
-    @SuppressWarnings("unchecked")
-    public void setList(List list) {
+
+    @SuppressWarnings("unchecked") public void setList(List list) {
         this.mList.clear();
         if (list == null) return;
         this.mList.addAll(list);
     }
 
+
     public void clear() {
         this.mList.clear();
     }
+
 
     public void remove(Object o) {
         this.mList.remove(o);
     }
 
+
     public List getList() {
         return this.mList;
     }
 
-    @SuppressWarnings("unchecked")
-    public void addAll(Collection list) {
+
+    @SuppressWarnings("unchecked") public void addAll(Collection list) {
         this.mList.addAll(list);
     }
+
 
     /**
      * Please return RecyclerView loading layout Id array
@@ -103,7 +109,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * onBindViewHolder里的逻辑写在这
      *
      * @param viewHolder viewHolder
-     * @param position   position
+     * @param position position
      */
     public abstract void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position);
 
@@ -126,25 +132,25 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
      * @param position Item position
      * @return 默认ItemType等于0
      */
-    @Override
-    public int getItemViewType(int position) {
+    @Override public int getItemViewType(int position) {
         return this.getRecycleViewItemType(position);
     }
 
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+    @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         try {
             EasyRecyclerViewHolder easyRecyclerViewHolder = (EasyRecyclerViewHolder) holder;
             this.onBindRecycleViewHolder(easyRecyclerViewHolder, position);
             easyRecyclerViewHolder.setOnItemClickListener(this.onItemClickListener, position);
-            easyRecyclerViewHolder.setOnItemLongClickListener(this.onItemLongClickListener, position);
+            easyRecyclerViewHolder.setOnItemLongClickListener(this.onItemLongClickListener,
+                    position);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+    @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType < 0) return null;
         if (this.getItemLayouts() == null) return null;
         int[] layoutIds = this.getItemLayouts();
@@ -157,9 +163,11 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
             itemLayoutId = layoutIds[viewType];
         }
         View view = LayoutInflater.from(parent.getContext()).inflate(itemLayoutId, null);
-        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
         return new EasyRecyclerViewHolder(view);
     }
+
 
     /**
      * set the on item click listener
@@ -171,6 +179,7 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
         this.onItemClickListener = onItemClickListener;
     }
 
+
     /**
      * set the on item long click listener
      * 设置长点击事件
@@ -180,5 +189,4 @@ public abstract class EasyRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
     public void setOnItemLongClickListener(EasyRecyclerViewHolder.OnItemLongClickListener onItemLongClickListener) {
         this.onItemLongClickListener = onItemLongClickListener;
     }
-
 }

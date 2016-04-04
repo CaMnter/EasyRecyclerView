@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 CaMnter 421482590@qq.com
+ * Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@ package com.camnter.easyrecyclerviewtest.adapter;
 
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.camnter.easyrecyclerview.adapter.EasyRecyclerViewAdapter;
 import com.camnter.easyrecyclerview.holder.EasyRecyclerViewHolder;
 import com.camnter.easyrecyclerviewtest.R;
 import com.camnter.easyrecyclerviewtest.bean.EasyRecyclerViewData;
-
 
 /**
  * Description：EasyDividerItemDecorationAdapter
@@ -42,11 +40,10 @@ public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
      *
      * @return 布局Id数组
      */
-    @Override
-    public int[] getItemLayouts() {
-        return new int[]{
-                R.layout.item_recyclerview_multiple, R.layout.item_recyclerview_single};
+    @Override public int[] getItemLayouts() {
+        return new int[] { R.layout.item_recyclerview_multiple, R.layout.item_recyclerview_single };
     }
+
 
     /**
      * butt joint the onBindViewHolder and
@@ -57,8 +54,7 @@ public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
      * @param viewHolder viewHolder
      * @param position position
      */
-    @Override
-    public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
+    @Override public void onBindRecycleViewHolder(EasyRecyclerViewHolder viewHolder, int position) {
         int itemType = this.getRecycleViewItemType(position);
         EasyRecyclerViewData data = this.getItem(position);
         switch (itemType) {
@@ -77,6 +73,7 @@ public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
         }
     }
 
+
     /**
      * Please write judgment logic when more layout
      * and not write when single layout
@@ -86,13 +83,11 @@ public class EasyDividerItemDecorationAdapter extends EasyRecyclerViewAdapter {
      * @param position Item position
      * @return 布局Id数组中的index
      */
-    @Override
-    public int getRecycleViewItemType(int position) {
+    @Override public int getRecycleViewItemType(int position) {
         if (position % 2 == 0) {
             return SINGLE_ITEM_TYPE;
         } else {
             return MULTIPLE_ITEM_TYPE;
         }
     }
-
 }

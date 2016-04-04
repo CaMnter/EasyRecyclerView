@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 CaMnter 421482590@qq.com
+ * Copyright (C) 2015 CaMnter yuanyu.camnter@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import com.camnter.easyrecyclerview.holder.EasyRecyclerViewHolder;
 import com.camnter.easyrecyclerview.widget.EasyRecyclerView;
 import com.camnter.easyrecyclerview.widget.decorator.EasyDividerItemDecoration;
 import com.camnter.easyrecyclerviewtest.R;
 import com.camnter.easyrecyclerviewtest.adapter.MainAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,21 +34,24 @@ import java.util.List;
  * Created by：CaMnter
  * Time：2016-01-17 00:17
  */
-public class MainActivity extends AppCompatActivity implements EasyRecyclerViewHolder.OnItemClickListener {
+public class MainActivity extends AppCompatActivity
+        implements EasyRecyclerViewHolder.OnItemClickListener {
 
     private EasyRecyclerView mainRv;
     private MainAdapter mainAdapter;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
         this.mainRv = (EasyRecyclerView) this.findViewById(R.id.main_rv);
-        this.mainRv.addItemDecoration(new EasyDividerItemDecoration(this, EasyDividerItemDecoration.VERTICAL_LIST));
+        this.mainRv.addItemDecoration(
+                new EasyDividerItemDecoration(this, EasyDividerItemDecoration.VERTICAL_LIST));
 
         this.initData();
         this.initListeners();
     }
+
 
     private void initData() {
         this.mainAdapter = new MainAdapter();
@@ -61,20 +62,20 @@ public class MainActivity extends AppCompatActivity implements EasyRecyclerViewH
         this.mainRv.setAdapter(mainAdapter);
     }
 
+
     private void initListeners() {
         this.mainAdapter.setOnItemClickListener(this);
     }
+
 
     /**
      * on item click call back
      *
      * @param convertView convertView
-     * @param position    position
+     * @param position position
      */
-    @Override
-    public void onItemClick(View convertView, int position) {
+    @Override public void onItemClick(View convertView, int position) {
         Class c = this.mainAdapter.getItem(position);
         this.startActivity(new Intent(this, c));
     }
-
 }
