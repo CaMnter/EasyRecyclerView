@@ -28,6 +28,10 @@ import android.util.AttributeSet;
  * Time：2015-12-28 11:51
  */
 public class EasyRecyclerView extends RecyclerView {
+
+    private LinearLayoutManager mLinearLayoutManager;
+
+
     public EasyRecyclerView(Context context) {
         super(context);
         this.initRecyclerView(context);
@@ -53,14 +57,24 @@ public class EasyRecyclerView extends RecyclerView {
      */
     private void initRecyclerView(Context context) {
         // init LinearLayoutManager
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        this.mLinearLayoutManager = new LinearLayoutManager(context);
         // set the VERTICAL layout
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        this.mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         // set layout manager
-        this.setLayoutManager(linearLayoutManager);
+        this.setLayoutManager(this.mLinearLayoutManager);
         // set item animator
         this.setItemAnimator(new DefaultItemAnimator());
         // keep recyclerview fixed size
         this.setHasFixedSize(true);
+    }
+
+
+    public LinearLayoutManager getLinearLayoutManager() {
+        return mLinearLayoutManager;
+    }
+
+
+    public void setLinearLayoutManager(LinearLayoutManager linearLayoutManager) {
+        mLinearLayoutManager = linearLayoutManager;
     }
 }
