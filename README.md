@@ -141,11 +141,12 @@ This library provides two decoration:
 ## ScreenShots
 
 **EasyDividerItemDecoration**  
-![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/divider.png)   
+<img src="http://ww3.sinaimg.cn/large/006lPEc9gw1f30w1rpvkbj31ay2987mo.jpg" width="420x">
+   
 
   
 **EasyBorderDividerItemDecoration**   
-![EasyDividerItemDecoration](https://github.com/CaMnter/EasyRecyclerView/raw/master/screenshots/border.png)  
+<img src="http://ww1.sinaimg.cn/large/006lPEc9gw1f30w33fe7gj31ay298gwy.jpg" width="420x">  
 
 ---
 
